@@ -14,20 +14,23 @@ public class App {
         // -------------------------------------------------------------
         // TODO 1: Create a Scanner for user input
         // -------------------------------------------------------------
-
+        Scanner input = new Scanner(System.in);
 
         // -------------------------------------------------------------
         // TODO 2: Give information about your program
         //         Ask the user about their goals (if applicable)
         // -------------------------------------------------------------
-
+        System.out.println("Weekly Sleep Analyzer");
+        System.out.println("This program will help you track how many hours you sleep each day.");
+        System.out.println("You will enter your sleep data for 7 days.");   
+        System.out.println();
 
         // -------------------------------------------------------------
         // TODO 3: Create an array to hold 7 days of data
         //         Use an appropriate data type (int or double)
         //         Name the array weekData
         // -------------------------------------------------------------
-
+        double[] weekData = new double[7];
 
         // -------------------------------------------------------------
         // TODO 4: Use a for loop to collect data for each day of the week
@@ -38,13 +41,22 @@ public class App {
         //         - Use a while loop to prevent negative values
         //         - Re-prompt if the value is invalid
         // -------------------------------------------------------------
+        for (int i = 0; i < weekData.length; i++) {
+            System.out.println("Enter hours slept for day " + (i + 1) + ": ");
+            double hours = input.nextDouble(); 
+            while (hours < 0 || hours > 24) {
+                System.out.println("Invalid input. Please enter a value between 0 and 24.");
+                hours = input.nextDouble();
+            }
+            weekData[i] = hours;
+        }
 
 
         // -------------------------------------------------------------
         // TODO 5: Create a WeeklyData object
         //         Pass the weekData array into the constructor
         // -------------------------------------------------------------
-
+        WeeklyData sleepData = new WeeklyData(weekData);
 
         // -------------------------------------------------------------
         // TODO 6: Display the results of the analysis
@@ -56,12 +68,18 @@ public class App {
         //
         //         Use clear labels and formatted output if needed
         // -------------------------------------------------------------
-
+        System.out.println("Weekly Sleep Summary");
+        System.out.println("Total hours slept: " + sleepData.getTotal());
+        System.out.println("Average sleep per night: " + sleepData.getAverage());
+        System.out.println("Most sleep in a night: " + sleepData.getMax());
+        System.out.println("Least sleep in a night: " + sleepData.getMin());
 
         // -------------------------------------------------------------
         // TODO 7: Display the full week of data
         //         Use the toString() method from WeeklyData
         // -------------------------------------------------------------
+        System.out.println("Data breakdown");
+        System.out.println(sleepData.toString());
 
 
         // -------------------------------------------------------------
@@ -70,6 +88,11 @@ public class App {
         //         --> "You were very hydrated this week!"
         //         --> etc.
         // -------------------------------------------------------------
+        if (sleepData.getAverage() < 7) {
+            System.out.println("You should try to get more sleep next week!");
+        } else {
+            System.out.println("Great job on getting enough sleep this week!");
+        }
 
 
     }
