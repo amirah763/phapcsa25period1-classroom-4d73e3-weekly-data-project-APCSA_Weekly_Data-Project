@@ -90,10 +90,12 @@ public class App {
         // -------------------------------------------------------------
         if (sleepData.getAverage() < 7) {
             System.out.println("You should try to get more sleep next week!");
+            System.out.println("Try to maintain a consistent sleep schedule.");
+            System.out.println("Avoid caffeine and electronics before bedtime.");
         } else {
             System.out.println("Great job on getting enough sleep this week!");
+            System.out.println("Keep up the good sleep habits!");
         }
-
 
     }
 }
