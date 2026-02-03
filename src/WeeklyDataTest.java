@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *  - Arrays are non-empty for core tests.
  *  - Optional tests included for empty-array behavior.
  */
-class WeeklyDataTest {
+class WeeklyDataTest{
 
     // -------------------------------------------------
     // Constructor Deep Copy Tests
