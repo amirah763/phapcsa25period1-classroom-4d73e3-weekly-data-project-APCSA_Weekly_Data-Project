@@ -12,8 +12,6 @@ public class WeeklyData{
     //       Choose an appropriate type (double[] or int[])
     //       Create other instance variables as necessary
     private double[] data;
-    
-
 
     // -------------------------------------------------------------
     // Constructor
@@ -39,7 +37,6 @@ public class WeeklyData{
         }  
     }
 
-
     // -------------------------------------------------------------
     // getTotal
     // -------------------------------------------------------------
@@ -59,7 +56,6 @@ public class WeeklyData{
         return total; // replace with your calculated total
     }
 
-
     // -------------------------------------------------------------
     // getAverage
     // -------------------------------------------------------------
@@ -78,7 +74,6 @@ public class WeeklyData{
         }
         return getTotal() / data.length;
     }
-
 
     // -------------------------------------------------------------
     // getMax
@@ -101,7 +96,6 @@ public class WeeklyData{
         return max;
     }
 
-
     // -------------------------------------------------------------
     // getMin
     // -------------------------------------------------------------
@@ -122,7 +116,6 @@ public class WeeklyData{
         }
         return min;
     }
-
 
     // -------------------------------------------------------------
     // toString
